@@ -104,3 +104,13 @@ jobs:
     steps:
       - name: Notify completion
         run: echo "Tests are completed! Congratulations Rafael!!!!"
+
+      - name: Create zip file
+        run: |
+          zip -r Rafael.zip . # Adjust the path if you want to zip specific files or directories
+
+      - name: Upload Artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: Rafael
+          path: Rafael.zip
